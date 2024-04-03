@@ -66,7 +66,7 @@ const DashboardPage = (props) => {
             name="chatroomName"
             id="chatroomName"
             ref={chatroomNameRef}
-            placeholder="ChatterBox Nepal"
+            placeholder="Chatroom Name"
           />
         </div>
       </div>
