@@ -7,7 +7,7 @@ const DashboardPage = (props) => {
   const [chatrooms, setChatrooms] = React.useState([]);
   const getChatrooms = () => {
     axios
-      .get("http://localhost:8000/chatroom", {
+      .get("https://chat-back-wm07.onrender.com/chatroom", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("CC_Token"),
         },
@@ -29,7 +29,7 @@ const DashboardPage = (props) => {
     const chatroomName = chatroomNameRef.current.value;
 
     axios
-      .post("http://localhost:8000/chatroom", {
+      .post("https://chat-back-wm07.onrender.com/chatroom", {
         name: chatroomName,
       }, {
         headers: {
