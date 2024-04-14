@@ -1,12 +1,18 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import makeToast from "../Toaster";
+import axios from "axios";
+import endpointUrl from "../env"
+import chatroomName from "../ChatroomName";
+
+
 
 const ChatroomPage = ({ match, socket }) => {
   const chatroomId = match.params.id;
   const [messages, setMessages] = React.useState([]);
   const messageRef = React.useRef();
   const [userId, setUserId] = React.useState("");
+
 
   const sendMessage = () => {
     if (socket) {
@@ -49,13 +55,14 @@ const ChatroomPage = ({ match, socket }) => {
         });
       }
     };
+
     //eslint-disable-next-line
   }, []);
 
   return (
     <div className="chatroomPage">
       <div className="chatroomSection">
-        <div className="cardHeader">Chatroom Name</div>
+        <div className="cardHeader">{chatroomName}</div>
         <div className="chatroomContent">
           {messages.map((message, i) => (
             <div key={i} className="message">

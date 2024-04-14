@@ -8,11 +8,13 @@
 }
 
 .chatroomSection {
+  background: rgba(255, 255, 255, 0.3);
+  background-blend-mode: color;
   width: 40vw;
   height: 80vh;
   margin: auto;
-  border: 1px solid #eee;
   position: relative;
+  padding: 10px;
 }
 
 .chatroomContent {
@@ -39,10 +41,12 @@
 
 .chatroomActions button {
   height: 100%;
+  margin: auto;
 }
 
 .message {
   margin-bottom: 0.25rem;
+  word-wrap: break-word;
 }
 
 .otherMessage {

@@ -7,6 +7,8 @@ import IndexPage from "./Pages/IndexPage";
 import ChatroomPage from "./Pages/ChatroomPage";
 import io from "socket.io-client";
 import makeToast from "./Toaster";
+import endpointUrl from "./env"
+
 
 function App() {
   const [socket, setSocket] = React.useState(null);
@@ -14,7 +16,7 @@ function App() {
   const setupSocket = () => {
     const token = localStorage.getItem("CC_Token");
     if (token && !socket) {
-      const newSocket = io("https://chat-back-wm07.onrender.com", {
+      const newSocket = io(endpointUrl, {
         query: {
           token: localStorage.getItem("CC_Token"),
         },

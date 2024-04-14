@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import makeToast from "../Toaster";
+import chatroomName from "../ChatroomName";
 
 const DashboardPage = (props) => {
   const [chatrooms, setChatrooms] = React.useState([]);
@@ -26,8 +27,6 @@ const DashboardPage = (props) => {
   }, []);
   
   const createChatroom = () => {
-    const chatroomName = chatroomNameRef.current.value;
-
     axios
       .post("https://chat-back-wm07.onrender.com/chatroom", {
         name: chatroomName,
@@ -52,6 +51,11 @@ const DashboardPage = (props) => {
           makeToast("error", err.response.data.message);
       });
   };
+
+  const setChatroomName = (name) => {
+    console.log(name)
+    // chatroomName = name;
+  }
   
   const chatroomNameRef = React.createRef();
 

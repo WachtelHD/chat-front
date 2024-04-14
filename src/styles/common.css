@@ -3,37 +3,32 @@
 * {
   font-family: Montserrat;
   box-sizing: border-box;
-  color: #333;
 }
 
 body {
   font-size: 16px;
+  background-image: url(/src/assets/blurry-gradient-haikei.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100ch;
 }
 
 .card {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background: rgba(255, 255, 255, 0.3);
+  background-blend-mode: color;
   border-radius: 4px;
   padding: 1rem;
-  position: relative;
   position: fixed;
   left: 50%;
   top: 50%;
-  width: 25vw;
   transform: translate(-50%, -50%);
 }
 
 .cardHeader {
-  background: #f7c52a;
-  padding: 0.75rem 1.5rem;
   border-radius: 2px;
   text-transform: uppercase;
-  transform: skewY(-4deg);
   font-size: 1.1rem;
   font-weight: bold;
   display: inline-block;
-  position: absolute;
-  top: -1rem;
-  left: -0.75rem;
 }
 
 .cardBody {
@@ -42,6 +37,7 @@ body {
 
 .inputGroup {
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 label {
@@ -62,12 +58,19 @@ input:focus {
 }
 
 button {
-  background: #f7c52a;
+  background: #2a94f7;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 2px;
   width: 100%;
   text-transform: uppercase;
+  margin: 0.2rem;
+  border-radius: 1rem;
+  font-weight: 700;
+}
+
+button:hover {
+  background: #437eb4;
 }
 
 .chatrooms {
@@ -82,12 +85,17 @@ button {
 }
 
 .join {
-  background: #f7c52a;
+  background: #2a94f7;
   padding: 0.25rem 1rem;
   border-radius: 2px;
 }
 
+.join:hover {
+  background: #437eb4;
+}
+
 a {
   text-decoration: none;
-  color: #333;
+  color: #11135f;
+  font-weight: 700;
 }

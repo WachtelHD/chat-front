@@ -2,17 +2,23 @@ import React from "react";
 import makeToast from "../Toaster";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import endpointUrl from "../env"
+
 
 const LoginPage = (props) => {
   const emailRef = React.createRef();
   const passwordRef = React.createRef();
+
+  const registerRedirect = () => {
+    props.history.push("/register");
+  }
 
   const loginUser = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
     axios
-      .post("https://chat-back-wm07.onrender.com/user/login", {
+      .post(endpointUrl + "/user/login", {
         email,
         password,
       })
@@ -44,7 +50,7 @@ const LoginPage = (props) => {
             type="email"
             name="email"
             id="email"
-            placeholder="abc@example.com"
+            placeholder="Email"
             ref={emailRef}
           />
         </div>
@@ -54,11 +60,14 @@ const LoginPage = (props) => {
             type="password"
             name="password"
             id="password"
-            placeholder="Your Password"
+            placeholder="Password"
             ref={passwordRef}
           />
         </div>
-        <button onClick={loginUser}>Login</button>
+          <button onClick={loginUser}>Login</button>
+          <p>
+            Don't have an account? <a onClick={registerRedirect}>Sign Up</a>       
+          </p>
       </div>
     </div>
   );
