@@ -29,7 +29,7 @@ const DashboardPage = (props) => {
   const createChatroom = () => {
     axios
       .post("https://chat-back-wm07.onrender.com/chatroom", {
-        name: chatroomName,
+        name: chatroomNameRef.current.value,
       }, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("CC_Token"),
